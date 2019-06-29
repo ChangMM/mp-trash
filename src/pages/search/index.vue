@@ -38,6 +38,7 @@ export default {
     return {
       keyword: '',
       config: config,
+      words: ['前男友', '前女友', '绿茶婊', '渣男', '渣女', '拜金女', '凤凰男']
     }
   },
   components: { back },
@@ -46,7 +47,7 @@ export default {
       if (this.keyword.trim() == '') {
         return null
       }
-      if (this.keyword.trim() == '前男友' || this.keyword.trim() == '前女友' || this.keyword.trim() == '渣男' || this.keyword.trim() == '渣女') {
+      if (this.words.indexOf(this.keyword.trim()) > -1) {
         return -1
       }
       let obj = null
