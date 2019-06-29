@@ -4,7 +4,9 @@
       <view class="input-wrap">
         <image class="search-icon" src="/static/images/search.png"></image>
         <input class="search" placeholder="搜索垃圾查看对应分类" type="text" focus v-model="keyword"></input>
-        <view class="clear-search" v-if="keyword != ''" @click="clearKeyword" ></view>
+        <div class="clear-wrap" v-if="keyword != ''" @click="clearKeyword" >
+          <view class="clear-search"></view>
+        </div>
       </view>
     </view>
     <div class="search-result" v-if="results != null">
@@ -15,7 +17,7 @@
         </div>
       </scroll-view>
       <div class="no-result" v-if="results != -1 && results.length == 0">
-        <p class="emoji">😫</p>
+        <p class="emoji">😳</p>
         <p class="tip">“{{keyword}}”尚未被收录</p>
         <button class="contact" open-type="contact">联系客服</button>
       </div>
@@ -47,9 +49,22 @@ export default {
       if (this.keyword.trim() == '前男友' || this.keyword.trim() == '前女友' || this.keyword.trim() == '渣男' || this.keyword.trim() == '渣女') {
         return -1
       }
-      return trash.filter((item) => {
+      let obj = null
+      let temp = trash.filter((item) => {
+        if (item.name == this.keyword.trim()) {
+          obj = item
+        }
         return item.name.lastIndexOf(this.keyword.trim()) > -1
       })
+
+      if (obj) {
+        temp = temp.filter((item) => {
+          return item.name != obj.name
+        })
+        return [obj].concat(temp)
+      } else {
+        return temp
+      }
     }
   },
   onLoad(options) {
@@ -64,7 +79,7 @@ export default {
   },
   onShareAppMessage () {
     return {
-      title: `可能最全垃圾分类查询，${this.keyword}属于什么垃圾`,
+      title: `trash/src，${this.keyword}属于什么垃圾`,
       path: `/pages/index/main`
     }
   }
@@ -110,6 +125,13 @@ page {
       width: 16px;
       height: 16px;
       margin-right: -20px;
+    }
+    .clear-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 40px;
+      width: 40px;
     }
     .clear-search {
       position: absolute;

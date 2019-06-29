@@ -41,6 +41,7 @@
       <span class="line">|</span>
       <button open-type="share">分享</button>
     </div>
+    <p class="name">小程序搜索<span class="em">『最强垃圾分类』</span>小程序</p>
   </div>
 </template>
 
@@ -69,7 +70,7 @@ export default {
   },
   onShareAppMessage () {
     return {
-      title: `可能最全垃圾分类查询`,
+      title: `trash/src`,
       path: `/pages/index/main`
     }
   }
@@ -117,7 +118,7 @@ export default {
   }
 }
 .content-wtap {
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   .content-item {
     background-color: #eee;
     border-radius: 6px;
@@ -149,7 +150,7 @@ export default {
 }
 .other {
   text-align: center;
-  color: #666;
+  color: #999;
   .line {
     margin-left: 10px;
     margin-right: 10px;
@@ -158,9 +159,19 @@ export default {
     margin: 0;
     display: inline;
     padding: 0;
-    color: #666;
+    color: #999;
     font-size: 14px;
     background-color: transparent;
+  }
+}
+.name {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+  padding-top: 5px;
+  .em {
+    font-weight: bold;
+    color: #F5A623;
   }
 }
 </style>

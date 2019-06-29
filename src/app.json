@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/guide/main",
     "pages/search/main",
+    "pages/guide/main",
     "pages/table/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "垃圾分类查询",
+    "navigationBarTitleText": "最全垃圾分类查询",
     "navigationBarTextStyle": "black"
   }
 }
