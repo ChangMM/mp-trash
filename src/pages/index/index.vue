@@ -41,7 +41,7 @@
       <span class="line">|</span>
       <button open-type="share">分享</button>
     </div>
-    <p class="name">小程序搜索<span class="em">『最强垃圾分类』</span>小程序</p>
+    <p class="name">小程序搜索<span class="em">『最全垃圾分类』</span>小程序</p>
   </div>
 </template>
 

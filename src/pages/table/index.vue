@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <image src="https://cdn.iizhi.cn/mp/poster_1.png" mode="widthFix" />
-    <button type="button" @click="saveImageToAlbum('https://cdn.iizhi.cn/mp/poster_1.png')">保存图片到相册</button>
-    <image src="https://cdn.iizhi.cn/mp/poster_2.png" mode="widthFix" />
-    <button type="button" class="last" @click="saveImageToAlbum('https://cdn.iizhi.cn/mp/poster_2.png')">保存图片到相册</button>
+    <image :src="image1" mode="widthFix" />
+    <button type="button" @click="saveImageToAlbum(image1)">保存图片到相册</button>
+    <image :src="image2" mode="widthFix" />
+    <button type="button" class="last" @click="saveImageToAlbum(image2)">保存图片到相册</button>
     <back/>
   </div>
 </template>
@@ -11,6 +11,12 @@
 <script>
 import back from '@/components/back'
 export default {
+  data () {
+    return {
+      image1: `https://cdn.iizhi.cn/mp/poster_1.png?timestamp=${new Date().getTime()}`,
+      image2: `https://cdn.iizhi.cn/mp/poster_1.png?timestamp=${new Date().getTime()}`
+    }
+  },
   components: { back },
   methods: {
     saveImageToAlbum (path) {
@@ -80,9 +86,9 @@ export default {
   padding-bottom: 15px;
   text-align: center;
   image {
-    width: 95%;
+    width: 90%;
     border-radius: 6px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
   }
   button {
     margin-top: 15px;
@@ -90,8 +96,8 @@ export default {
     background-color: #F5A623;
     color: #fff;
     border-radius: 30px;
-    width: 200px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
     &.last {
       margin-bottom: 0;
     }
