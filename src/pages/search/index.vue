@@ -80,7 +80,7 @@ export default {
   },
   onShareAppMessage () {
     return {
-      title: `trash/src，${this.keyword}属于什么垃圾`,
+      title: `最全垃圾分类，${this.keyword}属于什么垃圾`,
       path: `/pages/index/main`
     }
   }

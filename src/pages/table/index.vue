@@ -65,14 +65,14 @@ export default {
     },
     onShareAppMessage () {
       return {
-        title: `垃圾分类常用图表`,
+        title: `最全垃圾分类`,
         path: `/pages/table/main?share=1`
       }
     }
   },
   onShareAppMessage () {
     return {
-      title: `常用垃圾分类表`,
+      title: `最全垃圾分类`,
       path: `/pages/table/main?share=1`
     }
   }

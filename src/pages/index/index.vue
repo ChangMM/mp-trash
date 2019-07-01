@@ -1,5 +1,9 @@
 <template>
   <div class="container">
+    <view class="add-hint" v-if="hint" @click="hideHint">
+      <text>添加到我的小程序</text>
+      <view class="close-hint"></view>
+    </view>
     <view class="search-wrap" @click="goSearch">
       <view class="input-wrap">
         <image class="search-icon" src="/static/images/search.png"></image>
@@ -49,9 +53,28 @@
 export default {
   data () {
     return {
+      hint: true
+    }
+  },
+  mounted () {
+    try {
+      const value = wx.getStorageSync('hinted')
+      if (value) {
+        this.hint = !value
+      }
+    } catch (e) {
+      console.log(e)
     }
   },
   methods: {
+    hideHint () {
+      this.hint = false
+      try {
+        wx.setStorageSync('hinted', 'true')
+      } catch (e) {
+        console.log(e)
+      }
+    },
     goSearch () {
       mpvue.navigateTo({
         url: '/pages/search/main'
@@ -70,7 +93,7 @@ export default {
   },
   onShareAppMessage () {
     return {
-      title: `trash/src`,
+      title: `最全垃圾分类`,
       path: `/pages/index/main`
     }
   }
@@ -81,6 +104,84 @@ export default {
 .container {
   padding-top: 60px;
 }
+.add-hint {
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  padding: 5px 30px 5px 5px;
+  border-radius: 2px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 13px;
+  text-align: left;
+  z-index: 2001;
+  box-shadow: 0 0 1px rgba(0,0,0,.35),0 2px 4px rgba(0,0,0,.15);
+  animation: bounce .6s cubic-bezier(.58,.1,.58,.25) infinite alternate;
+  &::before {
+    content: "";
+    position: absolute;
+    right: 50px;
+    top: -7px;
+    width: 0;
+    height: 0;
+    border-left: 15rpx solid transparent;
+    border-right: 15rpx solid transparent;
+    border-bottom: 15rpx solid #ffffff;
+    transform: translateX(50%);
+    z-index: 2001;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 50px;
+    top: -9px;
+    width: 0rpx;
+    height: 0rpx;
+    border-left: 16rpx solid transparent;
+    border-right: 16rpx solid transparent;
+    border-bottom: 16rpx solid #eeeeee;
+    transform: translateX(50%);
+  }
+  .close-hint {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    transform: translateY(-50%);
+  }
+  .close-hint::before,.close-hint::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.7em;
+    height: 4rpx;
+    border-radius: 2rpx;
+    background-color: #aaaaaa;
+  }
+
+  .close-hint::before {
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+
+  .close-hint::after {
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+}
+
+@keyframes bounce {
+  0%,5% {
+    transform: translate3d(0px,2px,0px);
+  }
+
+  100% {
+    transform: translate3d(0px,-2px,0px);
+  }
+}
+
 .search-wrap {
   position: fixed;
   width: 100%;

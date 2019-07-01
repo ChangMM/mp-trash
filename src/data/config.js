@@ -13,7 +13,7 @@ export const config = {
   },
   3: {
     color: '#003c71',
-    name: '可回收垃圾'
+    name: '可回收物'
   },
   4: {
     color: '#f9423a',
