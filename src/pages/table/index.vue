@@ -2,6 +2,7 @@
   <div class="container">
     <image :src="image1" mode="widthFix" />
     <button type="button" @click="saveImageToAlbum(image1)">保存图片到相册</button>
+    <ad class="ad-item" unit-id="adunit-45e9f0afb4510f33"></ad>
     <image :src="image2" mode="widthFix" />
     <button type="button" class="last" @click="saveImageToAlbum(image2)">保存图片到相册</button>
     <back/>
@@ -82,11 +83,15 @@ export default {
 <style scoped lang="scss">
 .container {
   background-color: #f5f5f5;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 15px;
   text-align: center;
+  .ad-item {
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
+  }
   image {
-    width: 90%;
+    width: 100%;
     border-radius: 6px;
     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
   }

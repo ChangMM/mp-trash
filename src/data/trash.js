@@ -5366,7 +5366,7 @@ export const trash = [
     },
     {
       "name": "墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "mh"
     },
     {
@@ -7386,7 +7386,7 @@ export const trash = [
     },
     {
       "name": "废墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "fmh"
     },
     {
@@ -8846,7 +8846,7 @@ export const trash = [
     },
     {
       "name": "打印墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "dymh"
     },
     {
@@ -8856,7 +8856,7 @@ export const trash = [
     },
     {
       "name": "打印机墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "dyjmh"
     },
     {
@@ -9956,7 +9956,7 @@ export const trash = [
     },
     {
       "name": "旧墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "jmh"
     },
     {
@@ -10471,7 +10471,7 @@ export const trash = [
     },
     {
       "name": "晒鼓墨盒",
-      "type": "3",
+      "type": "4",
       "pinyin": "sgmh"
     },
     {

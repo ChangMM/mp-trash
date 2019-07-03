@@ -18,13 +18,6 @@
           <p class="detail">日常生活垃圾产生的容易腐烂的生物质废弃物</p>
         </div>
       </div>
-      <div class="content-item" @click="goGuide(2)">
-        <image src="/static/images/gan.png" class="image" />
-        <div class="intro">
-          <p class="title">干垃圾</p>
-          <p class="detail">除可回收物、有害垃圾、湿垃圾以外的其它生活废弃物</p>
-        </div>
-      </div>
       <div class="content-item" @click="goGuide(3)">
         <image src="/static/images/kehuishou.png" class="image" />
         <div class="intro">
@@ -39,13 +32,21 @@
           <p class="detail">对人体健康或者自然环境造成直接或潜在危害的废弃物</p>
         </div>
       </div>
+      <div class="content-item" @click="goGuide(2)">
+        <image src="/static/images/gan.png" class="image" />
+        <div class="intro">
+          <p class="title">干垃圾</p>
+          <p class="detail">除可回收物、有害垃圾、湿垃圾以外的其它生活废弃物</p>
+        </div>
+      </div>
+      <ad class="ad-item" unit-id="adunit-45e9f0afb4510f33"></ad>
     </div>
+    <p class="name" @click="goArticle">点击查看<span class="em">『最强垃圾分类攻略』</span></p>
     <div class="other">
       <span @click="goTable">图表</span>
       <span class="line">|</span>
       <button open-type="share">分享</button>
     </div>
-    <p class="name">小程序搜索<span class="em">『最全垃圾分类』</span>小程序</p>
   </div>
 </template>
 
@@ -89,7 +90,12 @@ export default {
       mpvue.navigateTo({
         url: `/pages/table/main`
       })
-    }
+    },
+    goArticle(index) {
+      mpvue.navigateTo({
+        url: `/pages/article/main`
+      })
+    },
   },
   onShareAppMessage () {
     return {
@@ -103,6 +109,7 @@ export default {
 <style scoped lang="scss">
 .container {
   padding-top: 60px;
+  padding-bottom: 10px;
 }
 .add-hint {
   position: fixed;
@@ -219,14 +226,14 @@ export default {
   }
 }
 .content-wtap {
-  padding: 20px 20px 10px 20px;
+  padding: 15px 20px 10px 20px;
   .content-item {
     background-color: #eee;
     border-radius: 6px;
     display: flex;
-    padding: 15px;
+    padding: 12px;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     &:last-child{
       margin-bottom: 0;
     }
@@ -267,7 +274,7 @@ export default {
 }
 .name {
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   padding-top: 5px;
   .em {

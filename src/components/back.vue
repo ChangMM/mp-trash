@@ -1,8 +1,13 @@
 <template>
+<div class="float">
+  <button class="back-to-index" open-type="share">
+    <span>分享</span>
+  </button>
   <div class="back-to-index" @click="backToIndex">
     <span>回到</span>
     <span>首页</span>
   </div>
+</div>
 </template>
 
 <script>
@@ -18,18 +23,27 @@ export default {
           url: '/pages/index/main'
         })
       }
+    },
+    sharePage () {
+      console.log(1)
     }
   }
 }
 </script>
 <style lang="scss">
+.float {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+}
 .back-to-index {
   font-size: 10px;
-  height: 50px;
-  width: 50px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  margin-top: 10px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   color: #fff;
   background-color: #F5A623;

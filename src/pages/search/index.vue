@@ -38,7 +38,7 @@ export default {
     return {
       keyword: '',
       config: config,
-      words: ['前男友', '前女友', '绿茶婊', '渣男', '渣女', '拜金女', '凤凰男']
+      words: ['前男友', '前女友', '绿茶婊', '渣男', '渣女', '拜金女', '凤凰男', '甲方']
     }
   },
   components: { back },

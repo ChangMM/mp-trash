@@ -62,6 +62,7 @@
           </ul>
         </div>
       </div>
+      <ad class="ad-item" unit-id="adunit-45e9f0afb4510f33"></ad>
     </div>
     <back />
   </div>
@@ -69,7 +70,6 @@
 
 <script>
 import back from '@/components/back'
-import { config } from '@/data/config.js'
 
 export default {
   data () {
@@ -103,8 +103,16 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+page {
+  height: 100%;
+}
 .container {
+  padding-top: 52px;
+  padding-bottom: 15px;
+  position: relative;
+  overflow-y: scroll;
+  height: 100%;
   .nav-wrap {
     color: #fff;
     background-color: #F5A623;
@@ -112,6 +120,10 @@ export default {
     padding-bottom: 15px;
     display: flex;
     justify-content: space-around;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
     .nav-item {
       display: inline-block;
       padding-bottom: 4px;
@@ -123,8 +135,8 @@ export default {
     }
   }
   .content-wrap {
-    margin: 20px;
     padding: 20px;
+    margin: 15px 15px 0 15px;
     border-radius: 4px;
     background-color: rgba(#956c58, 0.1);
     .content-item {
@@ -166,6 +178,11 @@ export default {
           }
         }
       }
+    }
+    .ad-item {
+      margin-top: 20px;
+      border-radius: 4px;
+      overflow: hidden;
     }
   }
 }

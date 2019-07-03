@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/search/main",
+    "pages/article/main",
     "pages/guide/main",
+    "pages/search/main",
     "pages/table/main"
   ],
   "window": {
