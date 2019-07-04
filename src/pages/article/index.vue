@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <customNavBar :title="title" :backVisible="isBack" />
     <div class="content-item kehuishou-item">
       <image class="title-image" mode="aspectFit" src="/static/images/kehuishou.png" />
       <p class="title">垃圾资源化的主力军</p>
@@ -55,7 +56,7 @@
           </div>
           <div class="intro">
             <p class="intro-title">布料</p>
-            <p class="intro-detail">废弃衣服、桌布、书包、✍️等</p>
+            <p class="intro-detail">废弃衣服、桌布、书包、鞋子等</p>
           </div>
         </div> 
         <div class="icon-item">
@@ -80,7 +81,7 @@
     </div>
     <div class="content-item shi-item">
       <image class="title-image" mode="aspectFit" src="/static/images/shi.png" />
-      <p class="title">易腐垃圾</p>
+      <p class="title">易腐垃圾(厨余垃圾)</p>
       <div class="icon-wrap">
         <div class="icon-item">
           <div class="icon">
@@ -327,36 +328,34 @@
 </template>
 
 <script>
-import back from '@/components/back'
+import customNavBar from "@/components/nav"
 import { config } from '@/data/config.js'
 
 export default {
   data () {
     return {
-     
+      isBack: false,
+      title: '最强垃圾分类攻略'
     }
   },
-  components: { back },
-  methods: {
-    
+  onLoad (options) {
+    this.isBack = !options.share
   },
+  components: { customNavBar },
   onShareAppMessage () {
     return {
-      title: '最强垃圾分类攻略，看着一篇就够了',
-      path: `/pages/article/main`
+      title: '最强垃圾分类攻略，看这一篇就够了',
+      path: `/pages/article/main?share=1`
     }
   }
 }
 </script>
 
 <style lang="scss">
-page {
-  height: 100%;
-}
 .container {
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   .content-item {
-      padding: 20px 20px 10px 20px;
+      padding: 15px 15px 10px 15px;
       border-radius: 4px;
       position: relative;
       border-radius: 4px;
@@ -365,6 +364,9 @@ page {
       display: flex;
       flex-direction: column;
       align-items: center;
+      line-height: 1.4;
+      word-spacing: 0.2px;
+      letter-spacing: 0.2px;
       &.kehuishou-item {
         border: 1px solid #003c71;
         .title {
@@ -384,6 +386,7 @@ page {
         }
       }
       &.gan-item {
+        margin-bottom: 0;
         border: 1px solid #2d2926;
         .title {
           color: #2d2926;
@@ -418,7 +421,7 @@ page {
         border-radius: 4px;
       }
       .title {
-        font-size: 16px;
+        font-size: 17px;
         text-align: center;
         font-weight: bold;
         margin-bottom: 15px;
@@ -428,7 +431,7 @@ page {
         flex-wrap: wrap;
         justify-content: space-between;
         .icon-item {
-          width: 48%;
+          width: 49%;
           background-color: #fff;
           padding: 15px;
           border-radius: 4px;
@@ -450,19 +453,16 @@ page {
         }
         .intro-title {
           text-align: center;
-          font-size: 12px;
+          font-size: 14px;
           margin-bottom: 8px;
           margin-top: 8px;
           font-weight: bold;
         }
         .intro-detail {
           margin-top: 8px;
-          font-size: 11px;
+          font-size: 13px;
           color: #666;
           text-align: justify;
-          line-height: 1.4;
-          word-spacing: 0px;
-          letter-spacing: 0px;
         } 
       }
   }

@@ -13,7 +13,11 @@
       <scroll-view class="list" scroll-y v-if="results != -1 && results.length > 0">
         <div class="result-item" v-for="item in results" :key="item.name">
           <span class="name">{{item.name}}</span>
-          <span class="type" :style="{ backgroundColor: config[item.type].color }">{{config[item.type].name}}</span>
+          <div class=”type-wrap>
+            <span class="type" :style="{ backgroundColor: config[item.type].color }">{{config[item.type].name}}</span>
+            <span class="type" v-if="item.type == 1" :style="{ backgroundColor: 'rgb(67,104,63)' }">厨余垃圾</span>
+            <span class="type" v-if="item.type == 2" :style="{ backgroundColor: config[item.type].color }">其他垃圾</span>
+          </div>
         </div>
       </scroll-view>
       <div class="no-result" v-if="results != -1 && results.length == 0">
@@ -36,7 +40,7 @@ import { config } from '@/data/config.js'
 export default {
   data () {
     return {
-      keyword: '',
+      keyword: '菜',
       config: config,
       words: ['前男友', '前女友', '绿茶婊', '渣男', '渣女', '拜金女', '凤凰男', '甲方']
     }
@@ -178,13 +182,11 @@ page {
     &:nth-child(2n) {
       background-color: #f5f5f5;
     }
-    .name {
-
-    }
     .type {
       color: #fff;
       border-radius: 2px;
-      padding: 0 6px;
+      padding: 2px 6px;
+      margin-left: 6px;
     }
   }
   .no-result {

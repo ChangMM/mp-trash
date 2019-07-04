@@ -14,7 +14,7 @@
       <div class="content-item" @click="goGuide(1)">
         <image src="/static/images/shi.png" class="image" />
         <div class="intro">
-          <p class="title">湿垃圾</p>
+          <p class="title">湿垃圾(即厨余垃圾)</p>
           <p class="detail">日常生活垃圾产生的容易腐烂的生物质废弃物</p>
         </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="content-item" @click="goGuide(2)">
         <image src="/static/images/gan.png" class="image" />
         <div class="intro">
-          <p class="title">干垃圾</p>
+          <p class="title">干垃圾(即其他垃圾)</p>
           <p class="detail">除可回收物、有害垃圾、湿垃圾以外的其它生活废弃物</p>
         </div>
       </div>

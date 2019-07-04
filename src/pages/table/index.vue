@@ -1,24 +1,28 @@
 <template>
   <div class="container">
+    <customNavBar :backVisible="isBack" />
     <image :src="image1" mode="widthFix" />
     <button type="button" @click="saveImageToAlbum(image1)">保存图片到相册</button>
     <ad class="ad-item" unit-id="adunit-45e9f0afb4510f33"></ad>
     <image :src="image2" mode="widthFix" />
     <button type="button" class="last" @click="saveImageToAlbum(image2)">保存图片到相册</button>
-    <back/>
   </div>
 </template>
 
 <script>
-import back from '@/components/back'
+import customNavBar from "@/components/nav"
 export default {
   data () {
     return {
+      isBack: false,
       image1: `https://cdn.iizhi.cn/mp/poster_1.png?timestamp=${new Date().getTime()}`,
       image2: `https://cdn.iizhi.cn/mp/poster_1.png?timestamp=${new Date().getTime()}`
     }
   },
-  components: { back },
+  components: { customNavBar },
+  onLoad (options) {
+    this.isBack = !options.share
+  },
   methods: {
     saveImageToAlbum (path) {
       const self = this
@@ -64,12 +68,6 @@ export default {
         }
       })
     },
-    onShareAppMessage () {
-      return {
-        title: `最全垃圾分类`,
-        path: `/pages/table/main?share=1`
-      }
-    }
   },
   onShareAppMessage () {
     return {
