@@ -4,13 +4,19 @@
     <cover-view class="navbar" :style="{height: navBarHeight + 'px',backgroundColor:navBackgroundColor}">
       <cover-view class="nav-statusbar" :style="{height: statusBarHeight + 'px'}"></cover-view>
       <cover-view class="nav-titlebar" :style="{height: titleBarHeight + 'px' }">
-        <cover-view class="bar-options">
+        <cover-view class="bar-options" :class="{black: !isBarBlack}">
           <cover-view v-if="backVisible" class="opt opt-back" @click="backClick()">
-            <cover-image class="back-image" src="/static/images/back.png" mode="aspectFit" />
+            <cover-image 
+              class="back-image" 
+              :src="isBarBlack ? '/static/images/back.png' : '/static/images/back-white.png'" 
+              mode="aspectFit" />
           </cover-view>
           <cover-view class="line" v-if="backVisible && homePath"></cover-view>
           <cover-view v-if="homePath" class="opt opt-home" @click="homeClick()">
-            <cover-image class="home-image" src="/static/images/home.png" mode="aspectFit" />
+            <cover-image 
+              class="home-image" 
+              :src="isBarBlack ? '/static/images/home.png' : '/static/images/home-white.png'" 
+              mode="aspectFit" />
           </cover-view>
         </cover-view>
         <cover-view class="bar-title" :style="[{color:titleColor}]">{{title}}</cover-view>
@@ -31,6 +37,10 @@ export default {
     title: {
       required: false,
       default: "最全垃圾分类"
+    },
+    isBarBlack: {
+      required: false,
+      default: true,
     },
     backVisible: {
       required: false,
@@ -118,6 +128,18 @@ export default {
         top: 6px;
         border-radius: 26px;
         overflow: hidden;
+        &.black {
+          background-color: rgba(#000,0.1);
+          border: 0.5px solid rgba(#fff,0.2);
+          .opt {
+            &:active {
+              background-color: rgba(#000,0.2);
+            }
+          }
+          .line {
+            background-color: rgba(#fff,0.2);
+          }
+        }
         .opt {
           display: flex;
           justify-content: center;

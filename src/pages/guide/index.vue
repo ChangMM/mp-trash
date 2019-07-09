@@ -2,6 +2,7 @@
   <div class="container">
     <customNavBar 
       :backVisible="isBack"
+      :isBarBlack="isBackBar"
       titleColor="#fff"
       navBackgroundColor="#F5A623" />
     <div class="container-inner" :style="{height: windowHeight - navBarHeight + 'px'}">
@@ -82,6 +83,7 @@ export default {
   data () {
     return {
       isBack: false,
+      isBackBar: false,
       navigationBarTextStyle: 'white',
       navBarHeight: 0,
       windowHeight: 0,
@@ -140,13 +142,13 @@ page {
   height: 100%;
 }
 .container-inner {
-  padding-top: 52px;
+  padding-top: 42px;
   position: relative;
   .nav-wrap {
     color: #fff;
     background-color: #F5A623;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-around;
     position: absolute;
@@ -165,12 +167,11 @@ page {
   }
   .scroll-view {
     height: 100%;
-    padding: 15px 0;
     box-sizing: border-box;
   }
   .content-wrap {
     padding: 15px;
-    margin: 0 15px;
+    margin: 10px;
     border-radius: 4px;
     background-color: rgba(#956c58, 0.1);
     .content-item {
@@ -182,17 +183,17 @@ page {
       }
     }
     .icon {
-      height: 80px;
-      width: 80px;
+      height: 70px;
+      width: 70px;
       border-radius: 4px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     .intro {
       text-align: justify;
       .label {
         font-size: 16px;
         font-weight: bold;
-        margin-top: 10px;
+        margin-top: 8px;
         margin-bottom: 5px;
       }
       .detail {

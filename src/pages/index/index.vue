@@ -41,12 +41,12 @@
       </div>
       <ad class="ad-item" unit-id="adunit-45e9f0afb4510f33"></ad>
     </div>
-    <p class="name" @click="goArticle">点击查看<span class="em">『最强垃圾分类攻略』</span></p>
+    <!-- <p class="name" @click="goArticle">点击查看<span class="em">『最强垃圾分类攻略』</span></p>
     <div class="other">
       <span @click="goTable">图表</span>
       <span class="line">|</span>
       <button open-type="share">分享</button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -226,12 +226,12 @@ export default {
   }
 }
 .content-wtap {
-  padding: 15px 20px 10px 20px;
+  padding: 12px 20px 10px 20px;
   .content-item {
     background-color: #eee;
     border-radius: 6px;
     display: flex;
-    padding: 12px;
+    padding: 10px;
     align-items: center;
     margin-bottom: 12px;
     &:last-child{

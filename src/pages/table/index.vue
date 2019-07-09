@@ -85,7 +85,7 @@ export default {
   text-align: center;
   .ad-item {
     border-radius: 6px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
   }
   image {
@@ -94,15 +94,21 @@ export default {
     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
   }
   button {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #F5A623;
+    margin-top: 20px;
+    margin-bottom: 26px;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
     color: #fff;
-    border-radius: 30px;
-    width: 180px;
-    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.08);
-    &.last {
-      margin-bottom: 0;
+    border-radius: 6px;
+    background-color: #00F2A9;
+    transition: all 0.1s;
+    box-shadow: 0px 6px 0px #00B9A4;
+    &:active {
+      top: 4px;
     }
   }
 }

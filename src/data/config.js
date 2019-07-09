@@ -1,7 +1,7 @@
 export const config = {
   0: {
     color: '#666',
-    name: '不属于生活垃圾'
+    name: '不是生活垃圾'
   },
   1: {
     color: '#956c58',

@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/search/main",
+    "pages/test/main",
     "pages/table/main",
+    "pages/skill/main",
     "pages/guide/main",
+    "pages/search/main",
     "pages/article/main"
   ],
   "window": {
@@ -11,5 +13,31 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "最全垃圾分类",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#F5A623",
+    "backgroundColor": "#f5f5f5",
+    "borderStyle": "white",
+    "list": [
+      {
+        "iconPath": "/static/tabs/home.png",
+        "selectedIconPath": "/static/tabs/home-active.png",
+        "pagePath": "pages/index/main",
+        "text": "垃圾查询"
+      },
+      {
+        "iconPath": "/static/tabs/model.png",
+        "selectedIconPath": "/static/tabs/model-active.png",
+        "pagePath": "pages/test/main",
+        "text": "小测试"
+      },
+      {
+        "iconPath": "/static/tabs/guide.png",
+        "selectedIconPath": "/static/tabs/guide-active.png",
+        "pagePath": "pages/skill/main",
+        "text": "分类技巧"
+      }
+    ]
   }
 }

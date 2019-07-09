@@ -3,7 +3,7 @@
     <view class="search-wrap">
       <view class="input-wrap">
         <image class="search-icon" src="/static/images/search.png"></image>
-        <input class="search" placeholder="搜索垃圾查看对应分类" type="text" focus v-model="keyword"></input>
+        <input class="search" placeholder="搜索垃圾查看对应分类" type="text" focus v-model="keyword" />
         <div class="clear-wrap" v-if="keyword != ''" @click="clearKeyword" >
           <view class="clear-search"></view>
         </div>
@@ -40,7 +40,7 @@ import { config } from '@/data/config.js'
 export default {
   data () {
     return {
-      keyword: '菜',
+      keyword: '',
       config: config,
       words: ['前男友', '前女友', '绿茶婊', '渣男', '渣女', '拜金女', '凤凰男', '甲方']
     }

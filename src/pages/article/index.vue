@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <customNavBar :title="title" :backVisible="isBack" />
+    <customNavBar 
+      :title="title" 
+      :backVisible="isBack" 
+      :isBarBlack="true"
+      />
     <div class="content-item kehuishou-item">
       <image class="title-image" mode="aspectFit" src="/static/images/kehuishou.png" />
       <p class="title">垃圾资源化的主力军</p>
